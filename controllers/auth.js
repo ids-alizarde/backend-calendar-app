@@ -104,7 +104,9 @@ const renovateToken = async ( req, resp = response ) => {
 
     resp.json({
         ok: true,
-        token
+        uid,
+        name,
+        token,
     });
 }
 
