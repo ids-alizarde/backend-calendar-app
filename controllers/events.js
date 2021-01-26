@@ -48,7 +48,7 @@ const updateEvent = async ( req, resp = response ) => {
         if ( !event ) {
 
             return resp.status( 404 ).json({
-                ok: true,
+                ok: false,
                 msg: 'El evento no existe'
             });
         }
@@ -56,7 +56,7 @@ const updateEvent = async ( req, resp = response ) => {
         if ( event.user.toString() !== req.uid ) {
 
             return resp.status( 401 ).json({
-                ok: true,
+                ok: false,
                 msg: 'No tienes los privilegios suficientes'
             });
         }
@@ -77,7 +77,7 @@ const updateEvent = async ( req, resp = response ) => {
         
         console.log(error);
         resp.status( 500 ).json({
-            ok: true,
+            ok: false,
             msg: 'Operativa no disponible'
         });
     }
@@ -95,7 +95,7 @@ const DeleteEvent = async ( req, resp = response ) => {
         if ( !event ) {
 
             return resp.status( 404 ).json({
-                ok: true,
+                ok: false,
                 msg: 'El evento no existe'
             });
         }
@@ -103,7 +103,7 @@ const DeleteEvent = async ( req, resp = response ) => {
         if ( event.user.toString() !== req.uid ) {
 
             return resp.status( 401 ).json({
-                ok: true,
+                ok: false,
                 msg: 'No tienes los privilegios suficientes'
             });
         }
@@ -119,7 +119,7 @@ const DeleteEvent = async ( req, resp = response ) => {
         
         console.log(error);
         resp.status( 500 ).json({
-            ok: true,
+            ok: false,
             msg: 'Operativa no disponible'
         });
     }
